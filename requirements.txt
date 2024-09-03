@@ -1,0 +1,7 @@
+langchain
+langchain-exa
+langchain_groq
+langchain_community
+exa_py
+python-dotenv
+crewai
