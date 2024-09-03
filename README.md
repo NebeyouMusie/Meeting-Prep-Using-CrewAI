@@ -1,4 +1,5 @@
 # Meeting Prep Using CrewAI
+![Meeting Preparation Image](./images/meeting-prep.webp)
 
 ## Description
 - This GitHub repository, "Meeting-Prep-Using-CrewAI", is a project that aims to utilize CrewAI to assist in meeting preparation. The project is written in Python and utilizes the Langchain, CrewAI, and GROQ-API libraries.
