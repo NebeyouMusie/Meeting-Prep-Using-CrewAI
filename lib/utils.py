@@ -14,6 +14,7 @@ load_config()
 
 # Function to setup the llm
 def groq_llm():
+    
     llm = ChatGroq(
         model='gemma2-9b-it',
         temperature=0.7,
