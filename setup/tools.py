@@ -15,29 +15,25 @@ load_config()
 
 class ExaSearchTool:
     @tool
-    def search(query: str):
-        """Search for a webpage based on query"""
-        return ExaSearchTool._exa().search(f"{query}", use_autoprompt=True, num_results=3)
-    
+    def search_and_contents(query: str):
+        """Search for webpages based on the query and retrieve their contents."""
+        # This combines two API endpoints: search and contents retrieval
+        return ExaSearchTool.exa.search_and_contents(
+            query, use_autoprompt=True, num_results=5, text=True, highlights=True
+        )
+
+
     @tool
-    def find_similar(url: str):
-        """Search for webpages similar to a given URL.
-        The URL passed in should be the URL returned from `search`"""
-        return ExaSearchTool._exa().find_similar(url, num_results=3)
-    
-    @tool
-    def get_contents(ids: str):
-        """Get the contents of webpage.
-        The ids must be passed in as a list, a list of ids returned from `search`"""
-        ids = eval(ids)
-        contents = str(ExaSearchTool._exa().get_contents(ids))
-        print(contents)
-        contents = contents.split("URL:")
-        contents = [content[:1000] for content in contents]
-        return "\n\n".join(contents)
+    def find_similar_and_contents(url: str):
+        """Search for webpages similar to a given URL and retrieve their contents.
+        The url passed in should be a URL returned from `search_and_contents`.
+        """
+        # This combines two API endpoints: find similar and contents retrieval
+        return ExaSearchTool.exa.find_similar_and_contents(url, num_results=5, text=True, highlights=True)
     
     def tools():
-        return [ExaSearchTool.search, ExaSearchTool.find_similar, ExaSearchTool.get_contents]
+        return [ExaSearchTool.search_and_contents, ExaSearchTool.find_similar_and_contents]
     
-    def _exa():
+    def exa():
+        
         return Exa(api_key=get_exa_search_api_key()) 

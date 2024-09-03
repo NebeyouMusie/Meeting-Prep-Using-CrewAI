@@ -66,6 +66,6 @@ class MeetingpreparationTasks:
                 participants bios, industry overview, talking points, and
                 strategic recommendations."""),
             agent=agent,
-            output_file='Meeting-Prep-Using-CrewAI/meeting_prep.md'
+            output_file='output/meeting_prep.md'
         )
         
