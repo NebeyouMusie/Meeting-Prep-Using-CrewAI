@@ -1,7 +1,16 @@
+import sys
+from pathlib import Path
+
+# Add the parent directory to the system path
+current_dir = Path(__file__).resolve().parent
+parent_dir = current_dir.parent
+sys.path.append(str(parent_dir))
+
 from langchain_groq import ChatGroq
 
-from config import load_config, get_groq_api_key
+from lib.config import load_config, get_groq_api_key
 
+load_config()
 
 # Function to setup the llm
 def groq_llm():

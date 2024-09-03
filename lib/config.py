@@ -8,8 +8,8 @@ def load_config():
 
 # Function to retrieve GROQ API KEY
 def get_groq_api_key():
-    return os.environ('GROQ_API_KEY')
+    return os.getenv('GROQ_API_KEY')
 
 # Function to retrieve EXA SEARCH API KEY
 def get_exa_search_api_key():
-    return os.environ('EXA_SEARCH_API_KEY')
+    return os.getenv('EXA_SEARCH_API_KEY')

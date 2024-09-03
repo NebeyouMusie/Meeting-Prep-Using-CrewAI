@@ -9,7 +9,9 @@ sys.path.append(str(parent_dir))
 from exa_py import Exa
 from langchain.agents import tool
 
-from lib.config import get_exa_search_api_key
+from lib.config import get_exa_search_api_key, load_config
+
+load_config()
 
 class ExaSearchTool:
     @tool

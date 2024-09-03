@@ -9,7 +9,7 @@ sys.path.append(str(parent_dir))
 from textwrap import dedent
 from crewai import Agent
 
-from tools.ExaSearchTool import ExaSearchTool
+from setup.tools import ExaSearchTool
 from lib.utils import groq_llm
 
 class MeetingPreparationAgents:
