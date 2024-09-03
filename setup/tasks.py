@@ -22,7 +22,7 @@ class MeetingpreparationTasks:
                 Meeting Context: {context}"""),
             expected_output=dedent("""\
                 A detailed report summarizing key findings about each participant
-                and comapny, highlightig information that could be relevant for the meeting."""),,
+                and comapny, highlightig information that could be relevant for the meeting."""),
             async_execution=True,
             agent=agent
         )
@@ -73,6 +73,7 @@ class MeetingpreparationTasks:
                 A well-structured briefing document that includes sections for
                 participants bios, industry overview, talking points, and
                 strategic recommendations."""),
-            agent=agent
+            agent=agent,
+            output_file='Meeting-Prep-Using-CrewAI/meeting_prep.md'
         )
         
